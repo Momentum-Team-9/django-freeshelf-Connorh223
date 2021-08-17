@@ -20,15 +20,17 @@ from django.conf import settings
 from books import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('', views.index, name='index'),
+    path('accounts/', include('registration.backends.simple.urls')),
+    path("admin/", admin.site.urls),
+    path('books/', views.list_books, name='list_books'),
 ]
 
 
-if settings.DEBUG:
-    import debug_toolbar
 
-    urlpatterns = [
-        path('accounts/', include('registration.backends.simple.urls')),
-        path("admin/", admin.site.urls),
-        path("__debug__/", include(debug_toolbar.urls)),
-    ]
+# if settings.DEBUG:
+#     import debug_toolbar
+
+#     urlpatterns = [
+#         path("__debug__/", include(debug_toolbar.urls)),
+#     ]
