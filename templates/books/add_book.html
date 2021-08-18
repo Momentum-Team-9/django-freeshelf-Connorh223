@@ -1,7 +1,22 @@
-
+{% extends "base.html" %}
+{% block content %}
 
 
 <h1>Add a New Book</h1>
 <div class="form">
-    
+    <form method="POST" class="form-element">
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="">
+            <label for="{{field.id_for_label}}" class="">{{ field.label }}{{ field }}</label>
+        </div>
+        {% endfor %}
+        <div>
+            <button class = "button successful" type = "submit">Add Book</button>
+        </div>
+
+
+    </form>
 </div>
+
+{% endblock %}
