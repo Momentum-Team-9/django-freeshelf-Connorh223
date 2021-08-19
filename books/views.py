@@ -49,19 +49,7 @@ def show_categories(request, slug):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-def list_author(request):
-    authors = Author.objects.all()
-    return render(request, 'books/list_author.html', {'authors', authors})
+# def list_author(request):
+#     authors = Author.objects.all()
+#     return render(request, 'books/list_author.html', {'authors', authors})
 
