@@ -2,7 +2,7 @@
 {% block content %}
 
 
-<h1>Edit {{ book.title }}</h1>
+<h1>Edit {{ book.title }} </h1>
 <div class="form">
     <form action="{ url 'edit_book' pk=book.pk %}" method="POST">
         {% csrf_token %}
